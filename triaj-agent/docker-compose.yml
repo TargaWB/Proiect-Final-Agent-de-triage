@@ -1,0 +1,70 @@
+# docker compose up --build   ->  UI http://localhost:8501 · Aprobări http://localhost:8502 · API http://localhost:8000/docs · Phoenix http://localhost:6006
+
+services:
+  phoenix:
+    image: arizephoenix/phoenix:version-20.16.0
+    ports:
+      - "6006:6006"      # UI + OTLP/HTTP
+      - "4317:4317"      # OTLP/gRPC
+    environment:
+      PHOENIX_WORKING_DIR: /mnt/data
+    volumes:
+      - phoenix_data:/mnt/data
+
+  api:
+    build: .
+    image: triaj-agent:latest
+    env_file: .env
+    environment:
+      STATE_DIR: /app/state
+      EVAL_DIR: /app/eval/results
+      PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006/v1/traces
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # Ollama de pe laptop, vazut din container
+    ports:
+      - "8000:8000"
+    volumes:
+      - triaj_state:/app/state
+      - ./eval/results:/app/eval/results
+    depends_on:
+      - phoenix
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  ui:
+    image: triaj-agent:latest
+    command: ["streamlit", "run", "ui/app.py", "--server.port=8501", "--server.address=0.0.0.0",
+              "--server.headless=true", "--browser.gatherUsageStats=false"]
+    environment:
+      API_URL: http://api:8000
+      PHOENIX_UI_URL: http://localhost:6006
+      APPROVALS_UI_URL: http://localhost:8502
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  # aplicatie separata, doar pentru oamenii responsabili: vad numai coada de aprobari
+  approvals:
+    image: triaj-agent:latest
+    command: ["streamlit", "run", "ui/approver_app.py", "--server.port=8502", "--server.address=0.0.0.0",
+              "--server.headless=true", "--browser.gatherUsageStats=false"]
+    environment:
+      API_URL: http://api:8000
+      PHOENIX_UI_URL: http://localhost:6006
+      APPROVER_CODE: ${APPROVER_CODE:-}
+    ports:
+      - "8502:8502"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  triaj_state:
+  phoenix_data:

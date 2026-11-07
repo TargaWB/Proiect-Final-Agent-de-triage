@@ -1,0 +1,7 @@
+# evaluare (scripts/evaluate.py, scripts/ragas_eval.py) si teste
+-r requirements.txt
+scikit-learn==1.8.0
+ragas==0.4.3
+langchain-community==0.4.2
+pytest==9.1.1
+httpx==0.28.1

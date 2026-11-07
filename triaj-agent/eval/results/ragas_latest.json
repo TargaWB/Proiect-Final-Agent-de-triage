@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-10-14T17:47:51",
+  "n": 20,
+  "judge": "openai/gpt-oss-120b",
+  "retrieval": {
+    "category_hit@3": 1,
+    "category_precision@3": 0.867,
+    "priority_precision@3": 0.217,
+    "mean_top1_distance": 0.138
+  },
+  "ragas": {
+    "faithfulness": 0.62,
+    "llm_context_precision_with_reference": 0.279,
+    "context_recall": 0.5
+  }
+}

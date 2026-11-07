@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-10-14T14:06:05",
+  "test_size": 100,
+  "labels": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "teams": {
+    "Hardware": "Desktop Support",
+    "Software": "Application Support",
+    "Network": "Network",
+    "Access/Permissions": "Identity & Access",
+    "Email/Communication": "Messaging",
+    "Database": "DBA",
+    "Security": "SecOps",
+    "Cloud/Infrastructure": "Infrastructure"
+  },
+  "models": [
+    {
+      "name": "few-shot RAG · groq:openai/gpt-oss-20b",
+      "approach": "fewshot",
+      "priority_accuracy": 0.59,
+      "priority_macro_f1": 0.58,
+      "category_accuracy": 0.97,
+      "team_accuracy": 0.97,
+      "exact_match": 0.56,
+      "invalid_pct": 0.0,
+      "latency_ms_p50": 7541.0,
+      "tokens_per_ticket": 996.0,
+      "cost_per_1000_usd": 0.1039,
+      "confusion_priority": [
+        [
+          9,
+          3,
+          1,
+          1
+        ],
+        [
+          9,
+          10,
+          3,
+          1
+        ],
+        [
+          1,
+          11,
+          19,
+          7
+        ],
+        [
+          0,
+          0,
+          4,
+          21
+        ]
+      ],
+      "p1_missed_without_human": 5,
+      "human_intervention_pct": 19.0,
+      "auto_resolution_pct": 81.0
+    },
+    {
+      "name": "few-shot RAG · ollama:llama3.2",
+      "approach": "fewshot",
+      "priority_accuracy": 0.53,
+      "priority_macro_f1": 0.521,
+      "category_accuracy": 0.99,
+      "team_accuracy": 0.99,
+      "exact_match": 0.52,
+      "invalid_pct": 0.0,
+      "latency_ms_p50": 2601.0,
+      "tokens_per_ticket": 955.0,
+      "cost_per_1000_usd": 0.0,
+      "confusion_priority": [
+        [
+          10,
+          4,
+          0,
+          0
+        ],
+        [
+          15,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          16,
+          19,
+          1
+        ],
+        [
+          1,
+          0,
+          4,
+          20
+        ]
+      ],
+      "p1_missed_without_human": 4,
+      "human_intervention_pct": 37.0,
+      "auto_resolution_pct": 63.0
+    },
+    {
+      "name": "LoRA · ollama:triaj-lora",
+      "approach": "lora",
+      "priority_accuracy": 0.87,
+      "priority_macro_f1": 0.857,
+      "category_accuracy": 0.99,
+      "team_accuracy": 0.99,
+      "exact_match": 0.86,
+      "invalid_pct": 0.0,
+      "latency_ms_p50": 1112.0,
+      "tokens_per_ticket": 221.0,
+      "cost_per_1000_usd": 0.0,
+      "confusion_priority": [
+        [
+          9,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          20,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          35,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          23
+        ]
+      ],
+      "p1_missed_without_human": null
+    }
+  ]
+}

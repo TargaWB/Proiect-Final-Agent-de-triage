@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-09-30T19:56:52",
+  "n": 100,
+  "judge": null,
+  "retrieval": {
+    "category_hit@3": 1,
+    "category_precision@3": 0.91,
+    "priority_precision@3": 0.3,
+    "mean_top1_distance": 0.096
+  }
+}

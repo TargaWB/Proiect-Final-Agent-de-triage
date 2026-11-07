@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-10-14T13:59:11",
+  "based_on_model": "few-shot RAG · groq:openai/gpt-oss-20b",
+  "assumptions": {
+    "manual_triage_hours": {
+      "P1": 0.25,
+      "P2": 0.5,
+      "P3": 1.0,
+      "P4": 2.0
+    },
+    "manual_misroute_rate": 0.2,
+    "reroute_penalty_hours": {
+      "P1": 0.5,
+      "P2": 1.0,
+      "P3": 2.0,
+      "P4": 4.0
+    },
+    "review_hours": {
+      "P1": 0.1,
+      "P2": 0.25,
+      "P3": 0.5,
+      "P4": 0.5
+    },
+    "review_catch_rate": 0.8
+  },
+  "rows": [
+    {
+      "scenario": "Manual (baseline)",
+      "time_to_route_h": 1.03,
+      "misroute_pct": 20.0,
+      "mttr_h": 38.14,
+      "human_decisions_pct": 100.0,
+      "auto_resolution_pct": 0.0
+    },
+    {
+      "scenario": "Agentic",
+      "time_to_route_h": 0.038,
+      "misroute_pct": 2.2,
+      "mttr_h": 36.77,
+      "human_decisions_pct": 19.0,
+      "auto_resolution_pct": 81.0
+    }
+  ],
+  "by_priority": [
+    {
+      "priority": "P1",
+      "manual_mttr_h": 3.74,
+      "agentic_mttr_h": 3.46
+    },
+    {
+      "priority": "P2",
+      "manual_mttr_h": 13.48,
+      "agentic_mttr_h": 12.88
+    },
+    {
+      "priority": "P3",
+      "manual_mttr_h": 37.74,
+      "agentic_mttr_h": 36.47
+    },
+    {
+      "priority": "P4",
+      "manual_mttr_h": 80.68,
+      "agentic_mttr_h": 77.88
+    }
+  ]
+}

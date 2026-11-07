@@ -1,0 +1,40 @@
+[
+  {"text": "Imprimanta de la etajul 2 nu mai printeaza nimic de dimineata", "submitted_by": "ana"},
+  {"text": "Mouse-ul wireless de la birou nu mai raspunde, bateria e noua", "submitted_by": "mihai"},
+  {"text": "Monitorul secundar pâlpâie din când în când, dar merge", "submitted_by": "elena"},
+  {"text": "As vrea o tastatura noua, cea veche are doua taste lipicioase", "submitted_by": "radu"},
+  {"text": "Casca de la laptop nu se mai conecteaza prin Bluetooth", "submitted_by": "dana"},
+
+  {"text": "Nu pot exporta raportul lunar din ERP, am nevoie de el pana diseara", "submitted_by": "george"},
+  {"text": "Excel se inchide singur cand deschid fisierul de buget trimestrial", "submitted_by": "ioana"},
+  {"text": "Aplicatia de contabilitate se blocheaza la export PDF", "submitted_by": "vlad"},
+  {"text": "Browserul se inchide brusc cand incarc dashboard-ul de vanzari", "submitted_by": "cristina"},
+  {"text": "CRM-ul afiseaza o eroare 500 cand incerc sa salvez un client nou", "submitted_by": "andrei"},
+
+  {"text": "Routerul din biroul 4 are conexiune lenta de azi dimineata", "submitted_by": "paul"},
+  {"text": "VPN-ul se deconecteaza la fiecare 10 minute de cand lucrez de acasa", "submitted_by": "simona"},
+  {"text": "Nu pot accesa serverul de fisiere din reteaua locala", "submitted_by": "bogdan"},
+  {"text": "Internetul pierde conexiunea la fiecare cateva minute in biroul 7", "submitted_by": "larisa"},
+
+  {"text": "Contul meu e blocat dupa schimbarea parolei, nu ma pot loga", "submitted_by": "mihai"},
+  {"text": "Nu am acces la folderul partajat al departamentului de HR", "submitted_by": "oana"},
+  {"text": "Permisiunile mele din Jira nu mai includ proiectul de dezvoltare", "submitted_by": "stefan"},
+
+  {"text": "Outlook nu mai sincronizeaza emailurile pe laptop de azi dimineata", "submitted_by": "ana"},
+  {"text": "Nu pot trimite emailuri cu atasamente mai mari de 5MB", "submitted_by": "cosmin"},
+  {"text": "Teams nu mai primeste notificari pentru mesaje noi", "submitted_by": "diana"},
+
+  {"text": "Baza de date raspunde foarte greu la interogari de o ora", "submitted_by": "vlad"},
+  {"text": "Nu pot rula un backup manual pe baza de date de clienti", "submitted_by": "george"},
+
+  {"text": "Am primit un email de phishing care cere parola contului de Jira", "submitted_by": "elena"},
+  {"text": "Antivirusul a blocat un fisier legitim trimis de un client", "submitted_by": "radu"},
+
+  {"text": "Serverul de productie care ruleaza aplicatia de facturare pentru toti clientii a picat", "submitted_by": "ana", "priority_hint": "P1"},
+  {"text": "Tot clusterul de productie din cloud e cazut, nimeni nu poate lucra", "submitted_by": "mihai", "priority_hint": "P1"},
+  {"text": "Ransomware pe serverul de fisiere, fisierele au extensia .locked", "submitted_by": "george", "priority_hint": "P1"},
+
+  {"text": "Nu merge nimic azi la calculatorul meu", "submitted_by": "dana"},
+  {"text": "Calculatorul face o chestie ciudata, nu stiu exact ce", "submitted_by": "cristina"},
+  {"text": "Tot ce ating azi se strica, cred ca e de la retea sau update-ul de ieri", "submitted_by": "andrei"}
+]
